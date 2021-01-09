@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import { AppContext, ADD_AUTHOR, ADD_BOOK, ADD_MAGAZINE } from './Components/Store';
+import PrintedPublications from './Components/PrintedPublications';
 import authors from '../data/authors.csv';
 import books from '../data/books.csv';
 import magazines from '../data/magazines.csv';
@@ -16,7 +17,6 @@ export default function App() {
     });
 
     books.forEach(book => {
-      console.log(book);
       dispatch({
         type: ADD_BOOK,
         book
@@ -32,6 +32,9 @@ export default function App() {
   }, []);
 
   return (
-    <h1>Library of Foo</h1>
+    <div className="library">
+      <h1>Library of Foo</h1>
+      <PrintedPublications />
+    </div>
   );
 }

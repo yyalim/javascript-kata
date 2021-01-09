@@ -1,5 +1,5 @@
-const App = () => {
-  console.log('Hello world!');
-};
+import React from 'react';
 
-export default App;
+export default function App() {
+  return <h1>App</h1>;
+}

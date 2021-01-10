@@ -34,6 +34,7 @@ export default function App() {
   return (
     <div className="library">
       <h1>Library of Foo</h1>
+      <hr/>
       <PrintedPublications />
     </div>
   );

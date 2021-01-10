@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { AppContext } from './Store';
 
 export default function Publication(props) {
@@ -13,4 +14,11 @@ export default function Publication(props) {
       {author && <p>{`${author.firstname} ${author.lastname}`}</p> }
     </article>
   )
+}
+
+Publication.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  publishedAt: PropTypes.string,
+  authors: PropTypes.string.isRequired,
 }

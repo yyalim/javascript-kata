@@ -1,4 +1,5 @@
 import React, { createContext, useReducer } from 'react';
+import PropTypes from 'prop-types';
 
 export const ADD_AUTHOR = 'ADD_AUTHOR';
 export const ADD_BOOK = 'ADD_BOOK';
@@ -48,4 +49,8 @@ export default function Store({ children }) {
       {children}
     </AppContext.Provider>
   )
+}
+
+Store.propTypes = {
+  children: PropTypes.element.isRequired
 }

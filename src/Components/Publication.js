@@ -1,17 +1,14 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { AppContext } from './Store';
+import Authors from './Authors';
 
-export default function Publication(props) {
-  const [state] = useContext(AppContext)
-  const author = state.authors[props.authors]
-
+export default function Publication({title, description, publishedAt, authors}) {
   return (
     <article className="publication">
-      <h2>{props.title}</h2>
-      {props.description && <p>{props.description}</p>}
-      {props.publishedAt && <p>Published At: {props.publishedAt}</p>}
-      {author && <p>{`${author.firstname} ${author.lastname}`}</p> }
+      <h2>{title}</h2>
+      {description && <p>{description}</p>}
+      {publishedAt && <p>Published At: {publishedAt}</p>}
+      <Authors authors={authors} />
     </article>
   )
 }
